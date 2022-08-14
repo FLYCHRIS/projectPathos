@@ -1,0 +1,354 @@
+@font-face{
+	font-family: futuraBold;
+	src: url(FuturaBold.ttf);
+}
+
+@font-face{
+	font-family: futura;
+	src: url(futuraLightBt.ttf);
+}
+
+body{
+	background-color: #013A67;
+	padding: 0 20px 0px 20px;
+	overflow: hidden;
+	.backgroundImage{
+		position: absolute;
+		max-width: 100%;
+		width: auto;
+		height: 50vw;
+		object-fit: contain;
+		margin-top: 2vw;
+		margin-left: 22vw;
+		
+	}
+}
+
+
+
+#navBarSection{
+	display: flex;
+	flex-flow: column nowrap;
+	align-content: center;
+	justify-content: flex-start;
+	position: relative;
+
+	.navBarContainer{
+		display: flex;
+		flex-flow: row nowrap;
+		align-content: center;
+		justify-content: flex-start;
+		max-width: 100%;
+		padding: 0 20px 10px 0px;
+
+		.logo{
+			display: flex;
+			flex-flow: row nowrap;
+			width: 100vw;
+			
+			align-items: center;
+			justify-content: flex-start;
+			
+			.logoText{
+				padding-left: 5px;
+				h3{
+					color: white;			
+					font-size: 2vw;
+					font-family: futuraBold;
+				}
+			}
+
+			img{
+				object-fit: cover;
+				height: 70px;
+				width: 70px;
+			}
+		}
+
+		.voidSpaceNav{
+			display: block;
+			width: 65vw;
+		}
+
+		.menuOpt{
+			display: inline-flex;
+			flex-flow: row nowrap;
+			margin-left: 10vw;
+
+			ul{
+				display: inline-flex;
+				flex-flow: row nowrap;
+				
+				list-style-type: none;
+
+				li{
+					padding-right: 40px;
+					a{
+						text-decoration: none;
+						color: white;
+						font-size: 2vw;
+						font-family: futuraBold;
+
+						&:hover{
+							color:#cc2600;
+						}
+					}
+
+					
+					.login{
+							a{
+								text-decoration: none;
+								color: white;
+								font-size: 2vw;
+								font-family: futuraBold;
+
+								background-color: #f8b13f;
+								border: 3px solid #9e6f0f;  
+								border-radius: 10px;
+								padding: 5px 10px 5px 10px;
+
+								&:hover{
+									background-color:rgba(223, 153, 18, 0.78);
+								}
+							}
+					}
+
+				}
+			}
+		}
+	}
+}
+
+#mainContainerSection{
+	
+	margin-top:0vw;
+	position: relative; 
+	display: flex;
+	flex-flow: row nowrap;
+	align-content: center;
+	justify-content: center;
+	text-align: center;
+	max-width: 100%;
+
+
+	
+	.mainContainerBox{
+		background-color: rgba(0, 0, 0, 0.4);
+		display: flex;
+		flex-flow: row nowrap;
+		align-content: flex-start;
+		justify-content: flex-start;
+		text-align: center;
+		width: 80%;
+		border-radius: 10px;
+
+		padding: 2vw 20px 2vw 2vw;
+		
+		.side1{
+			display: flex;
+			flex-flow: row nowrap;
+			align-content: flex-start;
+			justify-content: flex-start;
+			text-align: left;
+			margin: 0px auto;
+			width: 25vw;
+			
+
+			.buttonStyle{
+				justify-content: flex-end;
+				align-content: flex-end;
+				display: flex;
+				margin-top: 18vw;
+				margin-left: 40vw;
+
+				.buttonSearch{
+				color: white;
+				font-size: 2.5vw;
+				font-family: futuraBold;
+
+				background-color: #f8b13f;
+				border: 3px solid #9e6f0f;  
+				border-radius: 20px;
+				
+				padding: 4px 9px 4px 9px;
+
+				&:hover{
+					background-color:rgba(223, 153, 18, 0.78);
+				}		
+
+			}
+			}
+			
+
+			.boxSection1{
+
+
+				margin-right: 20vw;
+
+				.textInputBox{
+
+					background-color: rgba(0, 0, 0, 0.55);
+					color: white;
+					font-size: 1.5vw;
+					font-family: futura;
+					text-align: left;
+
+					width: 20vw;
+					padding: 10px;
+					height: auto;
+					border-width: 0px;
+					border-radius: 10px;
+				}
+
+				.addImageButton{
+					color: white;
+					font-size: 1.5vw;
+					font-family: futuraBold;
+					width: 350px;
+
+					justify-content: center;
+
+				}
+				.addImageButton::file-selector-button{
+					color: white;
+					font-size: 1.5vw;
+					font-family: futuraBold;
+
+					justify-content: center;
+
+					background-color: #f8b13f;
+					border: 3px solid #9e6f0f;  
+					border-radius: 15px;
+					
+					padding: 4px 9px 4px 9px;
+
+					&:hover{
+						background-color:rgba(223, 153, 18, 0.78);
+					}	
+				}
+
+			}
+
+			.locationOption{
+				display: flex;
+				flex-flow: row nowrap;
+				align-content: center;
+				justify-content: center;
+				text-align: center;
+
+				margin-top: -15vw;
+				margin-left: 23vw;
+				.locationBox{
+					display: grid;	
+					grid-template-columns: repeat(	4, 1fr);
+					grid-template-rows: repeat(	4, 1fr);
+
+					.locationIconBack{
+						grid-row: 1/5;
+						grid-column: 1/5;
+
+						img{
+							object-fit: cover;
+							height: auto;
+							width: 30vw;
+						}
+
+					}
+
+					.coverButton{
+						grid-row: 1/5;
+						grid-column: 1/5;
+
+						img{
+							object-fit: cover;
+							height: auto;
+							width: 30vw;
+							opacity: 1;
+						}
+
+					}
+
+					.locationIcon{
+						grid-row: 1/3;
+						grid-column: 1/5;
+						justify-content: center;
+						align-content: center;
+						text-align: center;
+					}
+
+					.locationText{
+						grid-row: 3/5;
+						grid-column: 1/5;
+						justify-content: center;
+						align-content: center;
+						text-align: center;
+					}
+
+
+				}
+			}
+		
+			 
+
+			.boxSection3{
+				display: flex;
+				flex-flow: column nowrap;
+				align-content: flex-start;
+				justify-content: flex-start;
+				text-align: center;
+				margin: 0px auto;
+				padding-left: 10px;
+				padding-right: 20px;
+				width: 40vw;
+				border-right: 4px solid rgba(253, 254, 255, 0.75);
+				border-left: 4px solid rgba(253, 254, 255, 0.75);
+
+				.header{
+					color: white;
+					font-size: 1.5vw;
+					font-family: futuraBold;
+					margin: 0vw 0.5vw 0vw 0.5vw;
+					padding-bottom: 0.5vw;
+
+				}
+
+				>input{
+	  				display: none;
+				}
+
+				#fileButton{
+					display:inline-flex;
+					flex-flow: row nowrap;
+					justify-content: center;
+					align-items: center;
+					width: 100%;
+					border-top:2px solid rgba(253, 254, 255, 0.75);
+					border-bottom:2px solid rgba(253, 254, 255, 0.75);
+
+					img{
+						width: auto;
+						height: 2vw;	
+					}
+
+					h2{
+						padding-left: 1.5vw;
+						color: white;
+						font-size: 1.5vw;
+						font-family: futura;
+					}
+
+					& :hover{
+						color:#cc2600
+					}
+
+				}
+
+
+			}
+		
+		}
+	}
+
+			
+}
+

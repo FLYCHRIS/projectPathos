@@ -1,0 +1,349 @@
+@font-face {
+  font-family: futuraBold;
+  src: url(FuturaBold.ttf);
+}
+@font-face {
+  font-family: futura;
+  src: url(futuraLightBt.ttf);
+}
+body {
+  background-color: #013A67;
+  padding: 0 20px 0px 20px;
+}
+
+#navBarSection {
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: center;
+  justify-content: flex-start;
+}
+#navBarSection .navBarContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  align-content: center;
+  justify-content: flex-start;
+  max-width: 100%;
+  padding: 0 20px 10px 0px;
+}
+#navBarSection .navBarContainer .logo {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100vw;
+  align-items: center;
+  justify-content: flex-start;
+}
+#navBarSection.navBarContainer .logo .logoText {
+  padding-left: 5px;
+}
+#navBarSection .navBarContainer .logo .logoText h3 {
+  color: white;
+  font-size: 1.8vw;
+  font-family: futuraBold;
+}
+#navBarSection .navBarContainer .logo img {
+  object-fit: cover;
+  height: 70px;
+  width: 70px;
+}
+#navBarSection .navBarContainer .voidSpaceNav {
+  display: block;
+  width: 65vw;
+}
+#navBarSection .navBarContainer .menuOpt {
+  display: inline-flex;
+  flex-flow: row nowrap;
+  margin-left: 10vw;
+}
+#navBarSection .navBarContainer .menuOpt ul {
+  display: inline-flex;
+  flex-flow: row nowrap;
+  list-style-type: none;
+}
+#navBarSection .navBarContainer .menuOpt ul li {
+  padding-right: 40px;
+}
+#navBarSection .navBarContainer .menuOpt ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.8vw;
+  font-family: futuraBold;
+}
+#navBarSection .navBarContainer .menuOpt ul li a:hover {
+  color: #cc2600;
+}
+#navBarSection .navBarContainer .menuOpt ul li .login a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.8vw;
+  font-family: futuraBold;
+  background-color: #f8b13f;
+  border: 3px solid #9e6f0f;
+  border-radius: 10px;
+  padding: 5px 10px 5px 10px;
+}
+#navBarSection .navBarContainer .menuOpt ul li .login a:hover {
+  background-color: rgba(223, 153, 18, 0.78);
+}
+
+#bodySection .bodyContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: space-around;
+  width: 100%;
+}
+#bodySection .bodyContainer .applications {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  width: 68vw;
+}
+#bodySection .bodyContainer .applications .banner {
+  max-width: 100%;
+  height: 100%;
+}
+#bodySection .bodyContainer .applications .banner #bannerImg {
+  height: 20vw;
+  width: 68vw;
+  object-fit: cover;
+  border-radius: 10px;
+}
+#bodySection .bodyContainer .applications .buttonOptions {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 15px;
+  max-width: 100%;
+  padding-top: 15px;
+  align-items: space-between;
+}
+#bodySection .bodyContainer .applications .buttonOptions .learningCenter {
+  width: 17vw;
+  height: 15vw;
+  background-color: rgba(0, 0, 0, 0.41);
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2vw;
+  border-radius: 10px;
+}
+#bodySection .bodyContainer .applications .buttonOptions .learningCenter:hover {
+  border: 3px solid #df9912;
+}
+#bodySection .bodyContainer .applications .buttonOptions .learningCenter a {
+  text-decoration: none;
+}
+#bodySection .bodyContainer .applications .buttonOptions .learningCenter a h3 {
+  margin: 0vw 2vw 0vw 2vw;
+  text-align: center;
+  color: white;
+  font-size: 1.5vw;
+  font-family: futura;
+}
+#bodySection .bodyContainer .applications .buttonOptions .learningCenter a img {
+  object-fit: cover;
+  height: 10vw;
+  width: 10vw;
+  display: block;
+  margin: 1vw auto;
+}
+#bodySection .bodyContainer .applications .buttonOptions .safetyCenter {
+  width: 17vw;
+  height: 15vw;
+  background-color: rgba(0, 0, 0, 0.41);
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2vw;
+  border-radius: 10px;
+}
+#bodySection .bodyContainer .applications .buttonOptions .safetyCenter:hover {
+  border: 3px solid #df9912;
+}
+#bodySection .bodyContainer .applications .buttonOptions .safetyCenter a {
+  text-decoration: none;
+}
+#bodySection .bodyContainer .applications .buttonOptions .safetyCenter a h3 {
+  margin: 0vw 2vw 0vw 2vw;
+  text-align: center;
+  color: white;
+  font-size: 1.5vw;
+  font-family: futura;
+}
+#bodySection .bodyContainer .applications .buttonOptions .safetyCenter a img {
+  object-fit: cover;
+  height: 10vw;
+  width: 10vw;
+  display: block;
+  margin: 1vw auto;
+}
+#bodySection .bodyContainer .applications .buttonOptions .plantAssist {
+  width: 17vw;
+  height: 15vw;
+  background-color: rgba(0, 0, 0, 0.41);
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2vw;
+  border-radius: 10px;
+}
+#bodySection .bodyContainer .applications .buttonOptions .plantAssist:hover {
+  border: 3px solid #df9912;
+}
+#bodySection .bodyContainer .applications .buttonOptions .plantAssist a {
+  text-decoration: none;
+}
+#bodySection .bodyContainer .applications .buttonOptions .plantAssist a h3 {
+  margin: 0vw 2vw 0vw 2vw;
+  text-align: center;
+  color: white;
+  font-size: 1.5vw;
+  font-family: futura;
+}
+#bodySection .bodyContainer .applications .buttonOptions .plantAssist a img {
+  object-fit: cover;
+  height: 10vw;
+  width: 10vw;
+  display: block;
+  margin: 1vw auto;
+}
+#bodySection .bodyContainer .applications .buttonOptions .companyPolicy {
+  width: 17vw;
+  height: 15vw;
+  background-color: rgba(0, 0, 0, 0.41);
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2vw;
+  border-radius: 10px;
+}
+#bodySection .bodyContainer .applications .buttonOptions .companyPolicy:hover {
+  border: 3px solid #df9912;
+}
+#bodySection .bodyContainer .applications .buttonOptions .companyPolicy a {
+  text-decoration: none;
+}
+#bodySection .bodyContainer .applications .buttonOptions .companyPolicy a h3 {
+  margin: 0vw 2vw 0vw 2vw;
+  text-align: center;
+  color: white;
+  font-size: 1.5vw;
+  font-family: futura;
+}
+#bodySection .bodyContainer .applications .buttonOptions .companyPolicy a img {
+  object-fit: cover;
+  height: 10vw;
+  width: 10vw;
+  display: block;
+  margin: 1vw auto;
+}
+#bodySection .bodyContainer .safetyTip {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 31vw;
+  margin: 0 0px 0px 15px;
+  height: 38vw;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.41);
+  justify-content: flex-start;
+}
+#bodySection .bodyContainer .safetyTip img {
+  object-fit: scale-down;
+  padding-top: 10px;
+  height: 4vw;
+  width: 4vw;
+  justify-content: center;
+  align-self: center;
+}
+#bodySection .bodyContainer .safetyTip .safetyText {
+  align-self: center;
+}
+#bodySection .bodyContainer .safetyTip .safetyText h3 {
+  text-align: center;
+  color: white;
+  font-size: 1.8vw;
+  font-family: futuraBold;
+}
+#bodySection .bodyContainer .safetyTip .safetyText p {
+  text-align: center;
+  color: white;
+  font-size: 1.3vw;
+  font-family: futura;
+}
+
+#footerSection {
+  display: block;
+  padding: 0px 0px 40px 0px;
+}
+#footerSection .footerContainer {
+  object-fit: fill;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.41);
+  margin-top: 1.5vw;
+  padding: 0px 5px 0px 5px;
+}
+#footerSection .footerContainer .bbsoTrackerContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 33%;
+  height: 12vw;
+  justify-content: center;
+}
+#footerSection .footerContainer .bbsoTrackerContainer .valueBBSO {
+  padding-bottom: 0vw;
+}
+#footerSection .footerContainer .bbsoTrackerContainer .valueBBSO h3 {
+  margin: 0px;
+  text-align: center;
+  color: white;
+  font-size: 6vw;
+  font-family: futuraBold;
+}
+#footerSection .footerContainer .bbsoTrackerContainer h3 {
+  text-align: center;
+  margin: 0px;
+  color: white;
+  font-size: 1.5vw;
+  font-family: futuraBold;
+}
+#footerSection .footerContainer .divider1 {
+  display: block;
+  width: 5px;
+  height: 9vw;
+  background-color: white;
+}
+#footerSection .footerContainer .voidSpace {
+  display: block;
+  width: 33%;
+  height: 12vw;
+  justify-content: center;
+}
+#footerSection .footerContainer .divider2 {
+  display: block;
+  width: 5px;
+  height: 9vw;
+  background-color: white;
+}
+#footerSection .footerContainer .bbsoAssistContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 33%;
+  height: 12vw;
+}
+#footerSection .footerContainer .bbsoAssistContainer .login a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.8vw;
+  font-family: futuraBold;
+  background-color: #f8b13f;
+  border: 3px solid #9e6f0f;
+  border-radius: 10px;
+  padding: 5px 10px 5px 10px;
+}
+#footerSection .footerContainer .bbsoAssistContainer .login a:hover {
+  background-color: rgba(223, 153, 18, 0.78);
+}
+
+/*# sourceMappingURL=homePage.css.map */

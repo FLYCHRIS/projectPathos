@@ -1,0 +1,136 @@
+{% extends "homePage/boilerPlate.html" %}
+
+{% block StyleSheetCSS %}
+    {% load static %}
+
+    <link href="{%static 'homePage/homePage.css'%}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    {% load static %}
+    <section id="navBarSection">
+        <div class="navBarContainer">
+            <div class="logo">
+                <img src="{%static 'homePage/logoY.png' %}">
+                <div class="logoText"> <h3> PROJECT PATHOS</h3> </div>
+
+            </div>
+            <div class="voidSpaceNav"> </div>
+            <div class="menuOpt">
+                <ul>
+                    <li><a href="#"> HOME </a></li>
+                    <li><a href="#"> HELP </a></li>
+                    <li ><span class="login"><a href="#"> LOGIN </a></span></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="bodySection">
+        <div class="bodyContainer">
+
+            <div class="applications">
+                <div class="banner">
+                    <img id="bannerImg" src="{%static 'homePage/webpageBanner.png' %}" alt="banner">
+                </div>
+
+                <div class="buttonOptions">
+                    <div class="learningCenter">
+                        <a href="#">
+                            <img src="{%static 'homePage/learningCenterIcon.png' %}" alt="Learning Icon">
+                            <h3>LEARNING CENTER</h3>
+                        </a>
+                    </div>
+                    <div class="safetyCenter">
+                        <a href="#">
+                            <img src="{%static 'homePage/safetyCenterIcon.png' %}" alt="Safety Icon">
+                            <h3>SAFETY CENTER</h3>
+                        </a>
+                    </div>
+                    <div class="plantAssist" >
+                        <a href="plantAssist">
+                            <img src="{%static 'homePage/plantAssistIcon.png' %}" alt="Plant Assist Icon">
+                            <h3>PLANT ASSIST</h3>
+                        </a>
+                    </div>
+
+                    <div class="companyPolicy">
+                        <a href="#">
+                            <img src="{%static 'homePage/companyPolicyIcon.png' %}" alt="Company Policy Icon">
+                            <h3>COMPANY POLICY</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="safetyTip">
+                <img src="{%static 'homePage/safetyTip.png' %}">
+                <div class="safetyText">
+                    <h3> DAILY SAFETY TIPS </h3>
+                    <p> An apple a day keep bad mind away!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="footerSection">
+        <div class="footerContainer">
+
+            <div class="bbsoTrackerContainer">
+                <div class="valueBBSO">
+                    <h3>0</h3>
+                </div>
+                <h3>BBSO TRACKER</h3>
+            </div>
+
+            <div class="divider1"> </div>
+
+            <div class="voidSpace"> </div>
+
+            <div class="divider2"> </div>
+
+            <div class="bbsoAssistContainer">
+                <span class="login"><a href="#"> BBSO ASSIST</a></span>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    let i = 0;
+        function changeImg(){
+            console.log(document.getElementById("bannerImg").src);
+
+
+
+            if (i === 0){
+                document.getElementById("bannerImg").src = "http://127.0.0.1:8000/static/homePage/webBanner2.jpg";
+            }
+
+            if (i === 1){
+                document.getElementById("bannerImg").src = "http://127.0.0.1:8000/static/homePage/webpageBanner.png";
+            }
+
+            changeI();
+        }
+
+        function changeI(){
+            i++;
+
+            if (i === 2){
+               i = 0;
+            }
+        }
+
+        function repeatChangeImg(){
+            let intervalTimeID;
+            intervalTimeID = setInterval(changeImg,5000);
+        }
+
+        changeImg();
+        repeatChangeImg();
+
+    </script>
+{% endblock %}

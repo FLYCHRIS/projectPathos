@@ -1,0 +1,212 @@
+@font-face{
+	font-family: futuraBold;
+	src: url(FuturaBold.ttf);
+}
+
+@font-face{
+	font-family: futura;
+	src: url(futuraLightBt.ttf);
+}
+
+body{
+	background-color: #013A67;
+	padding: 0 20px 0px 20px;
+	overflow: hidden;
+	.backgroundImage{
+		position: absolute;
+		max-width: 100%;
+		width: auto;
+		height: 50vw;
+		object-fit: contain;
+		margin-top: 2vw;
+		margin-left: 22vw;
+		overflow: hidden;
+	}
+}
+
+
+
+#navBarSection{
+	display: flex;
+	flex-flow: column nowrap;
+	align-content: center;
+	justify-content: flex-start;
+	position: relative;
+
+	.navBarContainer{
+		display: flex;
+		flex-flow: row nowrap;
+		align-content: center;
+		justify-content: flex-start;
+		max-width: 100%;
+		padding: 0 20px 10px 0px;
+
+		.logo{
+			display: flex;
+			flex-flow: row nowrap;
+			width: 100vw;
+			
+			align-items: center;
+			justify-content: flex-start;
+			
+			.logoText{
+				padding-left: 5px;
+				h3{
+					color: white;			
+					font-size: 2vw;
+					font-family: futuraBold;
+				}
+			}
+
+			img{
+				object-fit: cover;
+				height: 70px;
+				width: 70px;
+			}
+		}
+
+		.voidSpaceNav{
+			display: block;
+			width: 65vw;
+		}
+
+		.menuOpt{
+			display: inline-flex;
+			flex-flow: row nowrap;
+			margin-left: 10vw;
+
+			ul{
+				display: inline-flex;
+				flex-flow: row nowrap;
+				
+				list-style-type: none;
+
+				li{
+					padding-right: 40px;
+					a{
+						text-decoration: none;
+						color: white;
+						font-size: 2vw;
+						font-family: futuraBold;
+
+						&:hover{
+							color:#cc2600;
+						}
+					}
+
+					
+					.login{
+							a{
+								text-decoration: none;
+								color: white;
+								font-size: 2vw;
+								font-family: futuraBold;
+
+								background-color: #f8b13f;
+								border: 3px solid #9e6f0f;  
+								border-radius: 10px;
+								padding: 5px 10px 5px 10px;
+
+								&:hover{
+									background-color:rgba(223, 153, 18, 0.78);
+								}
+							}
+					}
+
+				}
+			}
+		}
+	}
+}
+
+#searchBarSection{
+	
+	margin-top: 6vw;
+	position: relative; 
+	display: flex;
+	flex-flow: column nowrap;
+	align-content: center;
+	justify-content: center;
+	text-align: center;
+	max-width: 100%;
+
+	.backButton{
+		display: flex;
+		flex-flow: row nowrap;
+		align-content: flex-start;
+		justify-content: flex-start;
+		text-align: center;
+		max-width: 100%;
+		padding-left: 5vw;
+		margin-bottom: 4vw;
+
+		.arrowBack{
+			width:5vw;
+			height: 5vw;
+			background-color:rgba(223, 153, 18, 1);
+			border-radius: 10vw;
+
+			img{
+				object-fit: contain;
+				width:5vw;
+
+			}
+		}
+	}
+	
+	.buttonSearch{
+		color: white;
+		font-size: 2.5vw;
+		font-family: futuraBold;
+
+		justify-content: center;
+
+		background-color: rgb(204, 38, 0);
+		border: 3px solid rgba(0, 0, 0, 0.4);  
+		border-radius: 15px;
+		margin-top: 5vw;
+		padding: 5px 10px 5px 10px;
+
+		&:hover{
+			background-color:rgba(204, 38, 0, 0.78);
+		}		
+
+	}
+	.addButton{ 
+		color: white;
+		font-size: 2.5vw;
+		font-family: futuraBold;
+
+		text-decoration: none;
+
+		justify-content: center;
+		text-align: center;
+
+		background-color: rgb(204, 38, 0);
+		border: 3px solid rgba(0, 0, 0, 0.4);  
+		border-radius: 15px;
+		margin: 5vw auto;
+		padding: 5px 10px 5px 10px;
+
+		&:hover{
+			background-color:rgba(204, 38, 0, 0.78);
+		}		
+
+	}
+
+	.searchTextBox{
+
+		background-color: rgba(0, 0, 0, 0.55);
+		color: white;
+		font-size: 2.5vw;
+		font-family: futura;
+		text-align: center;
+
+		width: 50vw;
+		padding: 10px;
+		height: auto;
+		border-width: 0px;
+		border-radius: 40px;
+	}		
+}
+

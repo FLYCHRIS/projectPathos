@@ -1,0 +1,98 @@
+{% extends "homePage/boilerPlate.html" %}
+
+{% block StyleSheetCSS %}
+    {% load static %}
+
+    <link href="{%static 'plantAssist/menuPage/plantAssist.css'%}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    {% load static %}
+    <img class="backgroundImage" src="{%static 'backgroundCube.png' %}" alt="background Image">
+    <section id="navBarSection">
+        <div class="navBarContainer">
+            <div class="logo">
+                <img src="{%static 'homePage/logoY.png' %}">
+                <div class="logoText"> <h3> PROJECT PATHOS</h3> </div>
+
+            </div>
+            <div class="voidSpaceNav"> </div>
+            <div class="menuOpt">
+                <ul>
+                    <li><a href="{% url 'home:home'%}"> HOME </a></li>
+                    <li><a href="#"> HELP </a></li>
+                    <li ><span class="login"><a href="#"> LOGIN </a></span></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="appOptionsSection">
+        <div class="options">
+
+            <div class="kksLocator">
+                <a href="{%url 'equipmentFinder:equipSearchPage' %}">
+                    <div class="text1">
+                        <h3> KKS LOCATOR</h3>
+                    </div>
+
+                    <div class="image1">
+                        <img src="{%static 'plantAssist/compass.png' %}" alt="banner">
+                    </div>
+                 </a>
+            </div>
+
+
+            <div class="plantProcedures" >
+                <a href="#">
+                    <div class="text2">
+                        <h3> PLANT PROCEDURES</h3>
+                    </div>
+
+                    <div class="image2">
+                        <img src="{%static 'plantAssist/magGlass.png' %}" alt="banner">
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+    let i = 0;
+        function changeImg(){
+            console.log(document.getElementById("bannerImg").src);
+
+
+
+            if (i === 0){
+                document.getElementById("bannerImg").src = "http://127.0.0.1:8000/static/webBanner2.jpg";
+            }
+
+            if (i === 1){
+                document.getElementById("bannerImg").src = "http://127.0.0.1:8000/static/webpageBanner.png";
+            }
+
+            changeI();
+        }
+
+        function changeI(){
+            i++;
+
+            if (i === 2){
+               i = 0;
+            }
+        }
+
+        function repeatChangeImg(){
+            let intervalTimeID;
+            intervalTimeID = setInterval(changeImg,5000);
+        }
+
+        changeImg();
+        repeatChangeImg();
+
+    </script>
+{% endblock %}

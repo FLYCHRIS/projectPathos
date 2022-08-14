@@ -1,0 +1,54 @@
+{% extends "boilerPlate.html" %}
+
+{% block StyleSheetCSS %}
+    {% load static %}
+
+    <link href="{%static '/equipSearch/equipSearch.css'%}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+{% load static %}
+    <img class="backgroundImage" src="{%static 'backgroundCube.png' %}" alt="background Image">
+
+    <section id="navBarSection">
+        <div class="navBarContainer">
+            <div class="logo">
+                <img src="{%static 'logoY.png' %}">
+                <div class="logoText"> <h3> PROJECT PATHOS</h3> </div>
+
+            </div>
+            <div class="voidSpaceNav"> </div>
+            <div class="menuOpt">
+                <ul>
+                    <li><a href="{% url 'home:home'%}"> HOME </a></li>
+                    <li><a href="#"> HELP </a></li>
+                    <li ><span class="login"><a href="#"> LOGIN </a></span></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="searchBarSection">
+        <div class="backButton">
+            <div class="arrowBack">
+                <a href="{% url 'home:plantAssist'%}"><img src="{%static 'backArrowCircle.png' %}" alt="backArrow"></a>
+            </div>
+        </div>
+        <form action="#" method="post">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <div class="buttonOps">
+                <input class="buttonSearch" type="submit" value="Search">
+                <a href="/project-pathos/add-equip/" class="addButton" type="button">Add Equipment</a>
+            </div>
+        </form>
+
+    </section>
+
+
+{% endblock %}

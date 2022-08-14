@@ -1,0 +1,103 @@
+{% extends "boilerPlate.html" %}
+
+{% block StyleSheetCSS %}
+    {% load static %}
+
+    <link href="{%static '/addEquipment/addEqipment.css'%}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+{% load static %}
+    <img class="backgroundImage" src="{%static 'backgroundCube.png' %}" alt="background Image">
+
+    <section id="navBarSection">
+        <div class="navBarContainer">
+            <div class="logo">
+                <img src="{%static 'logoY.png' %}">
+                <div class="logoText"> <h3> PROJECT PATHOS</h3> </div>
+
+            </div>
+            <div class="voidSpaceNav"> </div>
+            <div class="menuOpt">
+                <ul>
+                    <li><a href="{% url 'home:home'%}"> HOME </a></li>
+                    <li><a href="#"> HELP </a></li>
+                    <li ><span class="login"><a href="#"> LOGIN </a></span></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="mainContainerSection">
+        <div class="mainContainerBox">
+
+                <form id="form1" action="#" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="side1">
+                        <div class="boxSection1">
+                            {{ form.as_p }}
+
+                            <div class="locationOption">
+                                <div class="locationBox">
+                                        <div class="coverButton"><a href="#"> <img src="{%static 'locationIconBack.jpg' %}"> </a> </div>
+                                        <div class="coverImage"><a href="#"> </a></div>
+                                        <div class="locationIconBack"> <a href="#"><img src="{%static 'locationIconBack.jpg' %}"></a></div>
+                                        <div class="locationIcon"><img src="{%static 'locationIcon.png' %}"></div>
+                                        <div class="locationText"><h2>Add Location</h2></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="boxSection3">
+                            <h2 class="header">Related Documents</h2>
+                            <label id="fileButton" for="addFileButton">
+                                <img src="{%static 'plusIcon.png' %}">
+                                <h2>Add Document</h2>
+                            </label>
+                            {{ form1 }}
+                        </div>
+                    </div>
+
+                   <span class="buttonStyle"><input class="buttonSearch" type="button" value="Done"></span>
+                </form>
+
+
+
+
+
+        </div>
+
+    </section>
+
+<script type="text/javascript">
+    var files;
+    var classFile;
+
+    submitForms= function() {
+        document.getElementById("form1").submit();
+        document.getElementById("form2").submit();
+    }
+
+     function getFormValues(){
+        files = document.getElementById("addFileButton").value;
+        console.log(files.replace(/^.*[\\\/]/, ''));
+
+    }
+
+    function hello(){
+        console.log('hello')
+    }
+
+    classFile = document.getElementById("addFileButton");
+    classFile.addEventListener("change", getFormValues );
+    console.log(classFile);
+
+
+</script>
+
+{% endblock %}

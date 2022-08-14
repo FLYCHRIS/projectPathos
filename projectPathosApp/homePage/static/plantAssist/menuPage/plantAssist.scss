@@ -1,0 +1,229 @@
+@font-face{
+	font-family: futuraBold;
+	src: url(FuturaBold.ttf);
+}
+
+@font-face{
+	font-family: futura;
+	src: url(futuraLightBt.ttf);
+}
+
+body{
+	background-color: #013A67;
+	padding: 0 20px 0px 20px;
+	overflow: hidden;
+	.backgroundImage{
+		position: absolute;
+		max-width: 100%;
+		width: auto;
+		height: 50vw;
+		object-fit: contain;
+		margin-top: 2vw;
+		margin-left: 22vw;
+		overflow: hidden;
+	}
+}
+
+
+
+#navBarSection{
+	display: flex;
+	flex-flow: column nowrap;
+	align-content: center;
+	justify-content: flex-start;
+	position: relative;
+
+	.navBarContainer{
+		display: flex;
+		flex-flow: row nowrap;
+		align-content: center;
+		justify-content: flex-start;
+		max-width: 100%;
+		padding: 0 20px 10px 0px;
+
+		.logo{
+			display: flex;
+			flex-flow: row nowrap;
+			width: 100vw;
+			
+			align-items: center;
+			justify-content: flex-start;
+			
+			.logoText{
+				padding-left: 5px;
+				h3{
+					color: white;			
+					font-size: 2vw;
+					font-family: futuraBold;
+				}
+			}
+
+			img{
+				object-fit: cover;
+				height: 70px;
+				width: 70px;
+			}
+		}
+
+		.voidSpaceNav{
+			display: block;
+			width: 65vw;
+		}
+
+		.menuOpt{
+			display: inline-flex;
+			flex-flow: row nowrap;
+			margin-left: 10vw;
+
+			ul{
+				display: inline-flex;
+				flex-flow: row nowrap;
+				
+				list-style-type: none;
+
+				li{
+					padding-right: 40px;
+					a{
+						text-decoration: none;
+						color: white;
+						font-size: 2vw;
+						font-family: futuraBold;
+
+						&:hover{
+							color:#cc2600;
+						}
+					}
+
+					
+					.login{
+							a{
+								text-decoration: none;
+								color: white;
+								font-size: 2vw;
+								font-family: futuraBold;
+
+								background-color: #f8b13f;
+								border: 3px solid #9e6f0f;  
+								border-radius: 10px;
+								padding: 5px 10px 5px 10px;
+
+								&:hover{
+									background-color:rgba(223, 153, 18, 0.78);
+								}
+							}
+					}
+
+				}
+			}
+		}
+	}
+}
+
+#appOptionsSection{
+	
+	margin-top: 3vw;
+	position: relative; 
+	.options{
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: flex-start;
+		justify-content: space-around;
+
+		max-width: 50%;
+		width: 50%;
+
+		
+
+		.kksLocator{
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+			justify-content: flex-end;
+			width: 35vw;
+
+			padding: 1vw 2vw 1.5vw 2vw;
+			margin: 0vw 4vw 0vw 3vw;
+
+			border-radius: 10px;
+
+			background-color: rgba(0,0,0,0.45);	; 
+			a{
+				text-decoration: none;
+				display: inline-flex;
+				flex-flow: row nowrap;
+				align-items: center;
+				justify-content: flex-end;
+				
+				.text1{
+					text-decoration: none;	
+					h3{
+						margin: 0vw 2vw 0vw 2vw;
+						text-align: center;
+						color: white;
+						font-size: 3vw;
+						font-family: futura;
+					}
+				}
+
+				.image1{
+					max-width: 100%;
+					height: 100%;
+
+					img{
+						height: 10vw;
+						width: auto;
+						object-fit: cover;
+						
+					}
+				}
+
+			}
+			
+		}
+
+
+		.plantProcedures{
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+			justify-content: flex-end;
+			max-width: 35vw;
+
+			padding: 1vw 2vw 1.5vw 2vw;
+			margin: 3vw 4vw 1.5vw 3vw;
+			border-radius: 10px;
+			
+			background-color: rgba(0,0,0,0.45);	; 
+
+			a{
+				text-decoration: none;
+				display: inline-flex;
+				flex-flow: row nowrap;
+				align-items: center;
+				justify-content: flex-end;	
+				.text2{
+					
+					h3{
+						margin: 0vw 2vw 0vw 2vw;
+						text-align: center;
+						color: white;
+						font-size: 2.8vw;
+						font-family: futura;
+					}
+				}
+
+				.image2{
+					max-width: 100%;
+					height: 100%;
+
+					img{
+						height: 10vw;
+						width: auto;
+						object-fit: cover;
+						border-radius: 10px;
+					}
+				}
+			}	
+		}
+	}
+}

@@ -1,0 +1,439 @@
+@font-face{
+	font-family: futuraBold;
+	src: url(FuturaBold.ttf);
+}
+
+@font-face{
+	font-family: futura;
+	src: url(futuraLightBt.ttf);
+}
+
+body{
+	background-color: #013A67;
+	padding: 0 20px 0px 20px;
+}
+
+#navBarSection{
+	display: flex;
+	flex-flow: column nowrap;
+	align-content: center;
+	justify-content: flex-start;
+
+	.navBarContainer{
+		display: flex;
+		flex-flow: row nowrap;
+		align-content: center;
+		justify-content: flex-start;
+		max-width: 100%;
+		padding: 0 20px 10px 0px;
+
+		.logo{
+			display: flex;
+			flex-flow: row nowrap;
+			width: 100vw;
+			
+			align-items: center;
+			justify-content: flex-start;
+			
+			.logoText{
+				padding-left: 5px;
+				h3{
+					color: white;			
+					font-size: 1.8vw;
+					font-family: futuraBold;
+				}
+			}
+
+			img{
+				object-fit: cover;
+				height: 70px;
+				width: 70px;
+			}
+		}
+
+		.voidSpaceNav{
+			display: block;
+			width: 65vw;
+		}
+
+		.menuOpt{
+			display: inline-flex;
+			flex-flow: row nowrap;
+			margin-left: 10vw;
+
+			ul{
+				display: inline-flex;
+				flex-flow: row nowrap;
+				
+				list-style-type: none;
+
+				li{
+					padding-right: 40px;
+					a{
+						text-decoration: none;
+						color: white;
+						font-size: 1.8vw;
+						font-family: futuraBold;
+
+						&:hover{
+							color:#cc2600;
+						}
+					}
+
+					
+					.login{
+							a{
+								text-decoration: none;
+								color: white;
+								font-size: 1.8vw;
+								font-family: futuraBold;
+
+								background-color: #f8b13f;
+								border: 3px solid #9e6f0f;  
+								border-radius: 10px;
+								padding: 5px 10px 5px 10px;
+
+								&:hover{
+									background-color:rgba(223, 153, 18, 0.78);
+								}
+							}
+					}
+
+				}
+			}
+		}
+	}
+}
+
+#bodySection{
+
+	.bodyContainer{
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: flex-start;
+		justify-content: space-around;
+
+		width: 100%;
+		
+
+		.applications{
+			display: flex;
+			flex-flow: column nowrap;
+			align-items: center;
+			justify-content: flex-start;
+			width: 68vw;
+
+			.banner{
+				max-width: 100%;
+				height: 100%;
+
+
+				#bannerImg{
+					height: 20vw;
+					width: 68vw;
+					object-fit: cover;
+					border-radius: 10px;
+				}
+			}
+
+			.buttonOptions{
+				display: flex;
+				flex-flow: row nowrap;
+				gap:15px;
+				max-width: 100%;
+				padding-top: 15px;
+				align-items:  space-between;
+
+				.learningCenter{
+					width:17vw;
+					height: 15vw;
+					background-color: rgba(0, 0, 0, 0.41);
+					justify-content: center;
+					align-items:  center;
+					padding-bottom: 2vw;
+					border-radius: 	10px;
+					
+					&:hover{
+						border: 3px solid #df9912 ;
+					}
+
+
+
+					a{
+
+						text-decoration: none;	
+						h3{
+							margin: 0vw 2vw 0vw 2vw;
+							text-align: center;
+							color: white;
+							font-size: 1.5vw;
+							font-family: futura;
+							
+						}
+
+						img{
+							object-fit: cover;
+							height: 10vw;
+							width: 10vw;
+							display:block;
+							margin: 1vw auto;
+							
+						}
+					}
+
+				}
+
+				.safetyCenter{
+					width:17vw;
+					height: 15vw;
+					background-color: rgba(0, 0, 0, 0.41);
+					justify-content: center;
+					align-items:  center;
+					padding-bottom: 2vw;
+					border-radius: 	10px;
+
+					&:hover{
+						border: 3px solid #df9912 ;
+					}
+
+					a{
+
+						text-decoration: none;	
+						h3{
+							margin: 0vw 2vw 0vw 2vw;
+							text-align: center;
+							color: white;
+							font-size: 1.5vw;
+							font-family: futura;
+							
+						}
+
+						img{
+							object-fit: cover;
+							height: 10vw;
+							width: 10vw;
+							display:block;
+							margin: 1vw auto;
+							
+						}
+					}
+
+				}
+
+				.plantAssist{
+					width:17vw;
+					height: 15vw;
+					background-color: rgba(0, 0, 0, 0.41);
+					justify-content: center;
+					align-items:  center;
+					padding-bottom: 2vw;
+					border-radius: 	10px;
+					
+					&:hover{
+						border: 3px solid #df9912 ;
+					}
+
+					a{
+
+						text-decoration: none;	
+						h3{
+							margin: 0vw 2vw 0vw 2vw;
+							text-align: center;
+							color: white;
+							font-size: 1.5vw;
+							font-family: futura;
+							
+						}
+
+						img{
+							object-fit: cover;
+							height: 10vw;
+							width: 10vw;
+							display:block;
+							margin: 1vw auto;
+							
+						}
+					}
+				}
+
+				.companyPolicy{
+					width:17vw;
+					height: 15vw;
+					background-color: rgba(0, 0, 0, 0.41);
+					justify-content: center;
+					align-items:  center;
+					padding-bottom: 2vw;
+					border-radius: 	10px;
+
+					&:hover{
+						border: 3px solid #df9912 ;
+					}
+
+					a{
+
+						text-decoration: none;	
+						h3{
+							margin: 0vw 2vw 0vw 2vw;
+							text-align: center;
+							color: white;
+							font-size: 1.5vw;
+							font-family: futura;
+							
+						}
+
+						img{
+							object-fit: cover;
+							height: 10vw;
+							width: 10vw;
+							display:block;
+							margin: 1vw auto;
+							
+						}
+					}
+				}
+
+			}
+		}
+
+		.safetyTip{
+			display: flex;
+			flex-flow: column nowrap;
+			width: 31vw;
+			margin: 0 0px 0px 15px;
+			height: 38vw;
+			border-radius: 	10px;
+			background-color: rgba(0, 0, 0, 0.41);
+			justify-content: flex-start;
+			
+
+
+
+			img{
+				object-fit: scale-down;
+				padding-top: 10px;
+				height: 4vw;
+				width: 4vw;
+				justify-content: center;
+				align-self: center;
+			}
+			
+
+			.safetyText{
+				align-self: center;
+
+				h3{
+					text-align: center;
+					color: white;
+					font-size: 1.8vw;
+					font-family: futuraBold;
+				}
+
+				p{
+					text-align: center;
+					color: white;
+					font-size: 1.3vw;
+					font-family: futura;
+				}
+			}
+		}
+
+	}
+}
+
+#footerSection{
+	display: block;
+	
+	padding: 0px 0px 40px 0px;
+
+	.footerContainer{
+		object-fit: fill;
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: center;
+		border-radius: 10px;
+		background-color: rgba(0, 0, 0, 0.41);
+
+		margin-top: 1.5vw;
+		padding: 0px 5px 0px 5px;
+
+		
+
+		.bbsoTrackerContainer{
+			display: flex;
+			flex-flow: column nowrap;
+			width: 33%;
+			height: 12vw;
+			justify-content: center;
+
+			.valueBBSO{
+				padding-bottom: 0vw;
+
+				h3{
+					margin:0px;
+					text-align: center;
+					color: white;
+					font-size: 6vw;
+					font-family: futuraBold;
+				}
+			}
+
+			h3{
+				text-align: center;
+				margin:0px;
+				color: white;
+				font-size: 1.5vw;
+				font-family: futuraBold;				
+
+			}
+		}
+
+		.divider1{
+			display: block;
+			width: 5px;
+			height: 9vw;
+			background-color: white;
+		}
+
+		.voidSpace{
+			display: block;
+			width: 33%;
+			height: 12vw;
+			justify-content: center;
+		}
+
+		.divider2{
+			display: block;
+			width: 5px;
+			height: 9vw;
+			background-color: white;
+		}
+
+		.bbsoAssistContainer{
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+			justify-content: center;
+			width: 33%;
+			height: 12vw;
+
+				.login{
+
+						a{
+							text-decoration: none;
+							color: white;
+							font-size: 1.8vw;
+							font-family: futuraBold;
+							background-color: #f8b13f;
+							border: 3px solid #9e6f0f;  
+							border-radius: 10px;
+							padding: 5px 10px 5px 10px;
+
+							&:hover{
+								background-color:rgba(223, 153, 18, 0.78);
+							}
+						}
+				}
+		}
+	}	
+}
