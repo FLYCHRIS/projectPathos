@@ -1,0 +1,172 @@
+{% extends "boilerPlate.html" %}
+
+{% block StyleSheetCSS %}
+    {% load static %}
+
+    <link href="{%static '/addEquipment/addEqipment.css'%}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+{% load static %}
+    <img class="backgroundImage" src="{%static 'backgroundCube.png' %}" alt="background Image">
+
+    <section id="navBarSection">
+        <div class="navBarContainer">
+            <div class="logo">
+                <img src="{%static 'logoY.png' %}">
+                <div class="logoText"> <h3> PROJECT PATHOS</h3> </div>
+
+            </div>
+            <div class="voidSpaceNav"> </div>
+            <div class="menuOpt">
+                <ul>
+                    <li><a href="{% url 'home:home'%}"> HOME </a></li>
+                    <li><a href="#"> HELP </a></li>
+                    <li ><span class="login"><a href="#"> LOGIN </a></span></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="mainContainerSection">
+        <div class="mainContainerBox">
+
+            <form  action="#" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="formContainerMain">
+                    <div class="closeBar">
+                        <div class="closeButton"><a href="{% url 'equipmentFinder:equipSearchPage'%}"><p>x</p></a></div>
+                    </div>
+
+                    <div class="formContainer">
+
+
+                        <div class="boxSection1">
+                            {{ form.as_p }}
+                        </div>
+
+                        <div class="locationOption">
+                            <div class="locationBox">
+                                <div class="coverButton"><a href="#"> <img src="{%static 'locationIconBack.jpg' %}"> </a> </div>
+                                <div class="coverImage"><a href="#"> </a></div>
+                                <div class="locationIconBack"> <a href="#"><img src="{%static 'locationIconBack.jpg' %}"></a></div>
+                                <div class="locationIcon"><img src="{%static 'locationIcon.png' %}"></div>
+                                <div class="locationText"><h2>Add Location</h2></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <input class="buttonSearch" type="submit" value="Done" onclick="submitForms()">
+                </div>
+            </form>
+
+            <form  action="#" method="post" enctype="multipart/form-data">
+                <div id="boxSection3">
+                    <h2 class="header">Related Documents</h2>
+
+                    <label id="fileButton" for="addFileButton">
+                        <img src="{%static 'plusIcon.png' %}">
+                        <h2>Add Document</h2>
+                    </label>
+                    {{ form1 }}
+                </div>
+            <form>
+                
+        </div>
+
+    </section>
+
+<script type="text/javascript">
+    var files;
+    var numFiles;
+    var classFile;
+    var uploadFiles;
+    var removeFiles;
+    var arrayFiles;
+
+    submitForms= function() {
+        document.getElementById("form1").submit();
+        document.getElementById("form2").submit();
+    }
+
+     function getFormValues(){
+        files = document.getElementById("addFileButton");
+        arrayFiles = Array.from(files.files);
+        numFiles = arrayFiles.length;
+        //numFiles = document.getElementById("addFileButton").files.length;
+        console.log("This is the Array: "+files);
+
+        for (var i = 0; i < numFiles; ++i){
+            console.log(arrayFiles[i].name);
+            uploadFiles = document.createElement('div');
+            uploadFiles.setAttribute("id", "uploadDocs");
+            uploadFiles.innerHTML = '<img src=\"{%static 'pdfIcon.png' %}\" alt=\"pdf Icon\">';
+            //uploadFiles.innerHTML += '<h2>'+ files.files.item(i).name +'</h2>';
+            uploadFiles.innerHTML += '<h2>'+ arrayFiles[i].name +'</h2>';
+            uploadFiles.innerHTML += '<input onclick=\"removeFileFunction(this)\" id=\"removeFile" type=\"button\" value=\"remove\" name='+i+'></input>';
+            document.getElementById("boxSection3").insertBefore(uploadFiles,fileButton);
+        }
+    }
+
+    function removeFileFunction(name){
+
+        removeNum = name.attributes["name"].value;
+        console.log(name.attributes["name"].value);
+        console.log(arrayFiles.length);
+        //files = document.getElementById("addFileButton");
+        //arrayFiles = Array.from(files.files);
+        oldNumFiles =  arrayFiles.length;
+        removeFilesArray = arrayFiles.splice(removeNum,1);
+        numFiles = arrayFiles.length;
+
+        let parent= document.getElementById("boxSection3").children;
+        let child= document.getElementById("uploadDocs");
+
+        console.log(oldNumFiles)
+        for (var i = 0; i < oldNumFiles; ++i){
+            child= document.getElementById("uploadDocs");
+            console.log("i"+i);
+            child.remove();
+            //console.log(arrayFiles[i].name);
+            //console.log(files.files.item(i).name);
+        }
+
+        for (var i = 0; i < numFiles; ++i){
+            console.log(arrayFiles[i].name);
+            uploadFiles = document.createElement('div');
+            uploadFiles.setAttribute("id", "uploadDocs");
+            uploadFiles.innerHTML = '<img src=\"{%static 'pdfIcon.png' %}\" alt=\"pdf Icon\">';
+            //uploadFiles.innerHTML += '<h2>'+ files.files.item(i).name +'</h2>';
+            uploadFiles.innerHTML += '<h2>'+ arrayFiles[i].name +'</h2>';
+            uploadFiles.innerHTML += '<input onclick=\"removeFileFunction(this)\" id=\"removeFile" type=\"button\" value=\"remove\" name='+i+'></input>';
+            document.getElementById("boxSection3").insertBefore(uploadFiles,fileButton);
+        }
+
+
+        //files.files[0]['name']= "";
+        //console.log(files.files[0]);
+        //console.log("I am Chris");
+
+
+        //console.log(arrayFiles);
+        //arrayFiles.splice(removeNum,1);
+        //console.log(arrayFiles);
+        //numFiles = document.getElementById("addFileButton").files.length;
+
+        files = document.getElementById("addFileButton");
+
+    }
+
+    classFile = document.getElementById("addFileButton");
+    classFile.addEventListener("change", getFormValues );
+    console.log(classFile);
+
+
+
+</script>
+
+{% endblock %}

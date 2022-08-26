@@ -34,49 +34,56 @@
     <section id="mainContainerSection">
         <div class="mainContainerBox">
 
-            <form  action="#" method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                <div class="formContainerMain">
-                    <div class="closeBar">
-                        <div class="closeButton"><a href="{% url 'equipmentFinder:equipSearchPage'%}"><p>x</p></a></div>
-                    </div>
-
-                    <div class="formContainer">
-
-
-                        <div class="boxSection1">
-                            {{ form.as_p }}
-                        </div>
-
-                        <div class="locationOption">
-                            <div class="locationBox">
-                                <div class="coverButton"><a href="#"> <img src="{%static 'locationIconBack.jpg' %}"> </a> </div>
-                                <div class="coverImage"><a href="#"> </a></div>
-                                <div class="locationIconBack"> <a href="#"><img src="{%static 'locationIconBack.jpg' %}"></a></div>
-                                <div class="locationIcon"><img src="{%static 'locationIcon.png' %}"></div>
-                                <div class="locationText"><h2>Add Location</h2></div>
-                            </div>
-                        </div>
-
-                        <div id="boxSection3">
-                            <h2 class="header">Related Documents</h2>
-
-
-
-                            <label id="fileButton" for="addFileButton">
-                                <img src="{%static 'plusIcon.png' %}">
-                                <h2>Add Document</h2>
-                            </label>
-                            {{ form1 }}
-                        </div>
-
-                    </div>
-
-                    <input class="buttonSearch" type="submit" value="Done">
+            <div class="formContainerMain">
+                <div class="closeBar">
+                    <div class="closeButton"><a href="{% url 'equipmentFinder:equipSearchPage'%}"><p>x</p></a></div>
                 </div>
-            </form>
-        </div>
+                <div class="subFormContainer">
 
+                    <div class="form1Container">
+                        <form  id="form1" action="#" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+
+                            <div class="formContainer">
+
+                                    <div class="boxSection1">
+                                        {{ form.as_p }}
+                                    </div>
+
+                                    <div class="locationOption">
+                                        <div class="locationBox">
+                                            <div class="coverButton"><a href="#"> <img src="{%static 'locationIconBack.jpg' %}"> </a> </div>
+                                            <div class="coverImage"><a href="#"> </a></div>
+                                            <div class="locationIconBack"> <a href="#"><img src="{%static 'locationIconBack.jpg' %}"></a></div>
+                                            <div class="locationIcon"><img src="{%static 'locationIcon.png' %}"></div>
+                                            <div class="locationText"><h2>Add Location</h2></div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            <input class="buttonSearch" type="submit" value="Done" onclick="submitForms()">
+                            <input id ="fileArrayInput" type="hidden" name="filesArray" value="{{filesArray}}">
+                        </form>
+                    </div>
+
+                    <div class="form2Container">
+                        <form  id="form2" action="#" method="post" enctype="multipart/form-data">
+                            <div id="boxSection3">
+                                {% csrf_token %}
+                                <h2 class="header">Related Documents</h2>
+                                {{ form1 }}
+                                <label id="fileButton" for="addFileButton">
+                                    <img src="{%static 'plusIcon.png' %}">
+                                    <h2>Add Document</h2>
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
 <script type="text/javascript">
@@ -85,6 +92,10 @@
     var classFile;
     var uploadFiles;
     var removeFiles;
+    var arrayFiles;
+    var arrayFilesList = [];
+    arrayFilesNewNames = [];
+    var m;
 
     submitForms= function() {
         document.getElementById("form1").submit();
@@ -93,46 +104,109 @@
 
      function getFormValues(){
         files = document.getElementById("addFileButton");
-        numFiles = document.getElementById("addFileButton").files.length;
-        for (var i = 0; i < numFiles; ++i){
-            console.log(files.files.item(i).name);
+        arrayFiles = Array.from(files.files);
+        numFiles = arrayFiles.length;
+        console.log("This is the Array: "+files);
+
+        if (arrayFilesList.length == 0){
+            for (var i = 0; i < numFiles; ++i){
+                console.log(arrayFiles[i].name);
+                uploadFiles = document.createElement('div');
+                uploadFiles.setAttribute("id", "uploadDocs");
+                uploadFiles.innerHTML = '<img src=\"{%static 'pdfIcon.png' %}\" alt=\"pdf Icon\">';
+                uploadFiles.innerHTML += '<h2>'+ arrayFiles[i].name +'</h2>';
+                uploadFiles.innerHTML += '<input onclick=\"removeFileFunction(this)\" id=\"removeFile" type=\"button\" value=\"remove\" name='+i+'></input>';
+                document.getElementById("boxSection3").insertBefore(uploadFiles,fileButton);
+
+                arrayFilesList.push(arrayFiles[i].name);
+            }
+            m = i;
+        }
+        else{
+            for (var i = 0; i < numFiles; ++i){
+                ++m
+                console.log(arrayFiles[i].name);
+                uploadFiles = document.createElement('div');
+                uploadFiles.setAttribute("id", "uploadDocs");
+                uploadFiles.innerHTML = '<img src=\"{%static 'pdfIcon.png' %}\" alt=\"pdf Icon\">';
+                uploadFiles.innerHTML += '<h2>'+ arrayFiles[i].name +'</h2>';
+                uploadFiles.innerHTML += '<input onclick=\"removeFileFunction(this)\" id=\"removeFile" type=\"button\" value=\"remove\" name='+m+'></input>';
+                document.getElementById("boxSection3").insertBefore(uploadFiles,fileButton);
+
+                arrayFilesList.push(arrayFiles[i].name);
+            }
+        }
+        arrayFilesNewNames = [];
+        for (var i = 0; i < arrayFilesList.length; ++i){
+            if (i == arrayFilesList.length - 1){
+              arrayFilesNewNames.push(arrayFilesList[i]+" $,");
+            }
+            else{
+              arrayFilesNewNames.push(arrayFilesList[i]+" $");
+            }
+        }
+        filesArray = document.getElementById("fileArrayInput");
+        filesArray.setAttribute("value", arrayFilesNewNames);
+        console.log(arrayFilesList);
+        document.getElementById("form2").submit();
+    }
+
+
+    function removeFileFunction(name){
+        removeNum = name.attributes["name"].value;
+        console.log(removeNum);
+        console.log(arrayFiles.length);
+        oldNumFiles =  arrayFilesList.length;
+        console.log("Old Number Files: "+oldNumFiles)
+        removeFilesArray = arrayFilesList.splice(removeNum,1);
+        for (var i = 0; i < arrayFilesList.length; ++i){
+            console.log("ArrayFilesList After Removal"+arrayFilesList[i]);
+        }
+
+        console.log("Removed File: "+removeFilesArray)
+        numFiles = arrayFilesList.length;
+
+        let parent= document.getElementById("boxSection3").children;
+        let child= document.getElementById("uploadDocs");
+
+        console.log(oldNumFiles)
+        for (var i = 0; i < oldNumFiles; ++i){
+            child= document.getElementById("uploadDocs");
+            console.log("i"+i);
+            child.remove();
+        }
+
+        for (m = 0; m < numFiles; ++m){
+            console.log("hello Christopher");
+            console.log(arrayFilesList[m]);
             uploadFiles = document.createElement('div');
             uploadFiles.setAttribute("id", "uploadDocs");
             uploadFiles.innerHTML = '<img src=\"{%static 'pdfIcon.png' %}\" alt=\"pdf Icon\">';
-            uploadFiles.innerHTML += '<h2>'+ files.files.item(i).name +'</h2>';
-            uploadFiles.innerHTML += '<input onclick=\"removeFileFunction(this)\" id=\"removeFile" type=\"button\" value=\"remove\" name='+i+'></input>';
+            uploadFiles.innerHTML += '<h2>'+ arrayFilesList[m] +'</h2>';
+            uploadFiles.innerHTML += '<input onclick=\"removeFileFunction(this)\" id=\"removeFile" type=\"button\" value=\"remove\" name='+m+'></input>';
             document.getElementById("boxSection3").insertBefore(uploadFiles,fileButton);
-
         }
-    }
 
-    function removeFileFunction(name){
+        arrayFilesNewNames = [];
+        for (var i = 0; i < arrayFilesList.length; ++i){
 
-        removeNum = name.attributes["name"].value;
-        console.log(name.attributes["name"].value);
-
-        files = document.getElementById("addFileButton");
-        files.files[0]=" ";
-        console.log(files.files[0]);
-        console.log("I am Chris");
-
-        //arrayFiles = Array.from(files.files);
-        //arrayFiles.splice(removeNum,1);
-        //console.log(arrayFiles);
-        //numFiles = document.getElementById("addFileButton").files.length;
-
-        files = document.getElementById("addFileButton");
-        numFiles = document.getElementById("addFileButton").files.length;
-        for (var i = 0; i < numFiles; ++i){
-            console.log(files.files.item(i).name);
+            if (i == arrayFilesList.length - 1){
+               arrayFilesNewNames.push(arrayFilesList[i]+" $,");
+            }
+            else{
+                arrayFilesNewNames.push(arrayFilesList[i]+" $");
+            }
         }
+
+        filesArray = document.getElementById("fileArrayInput");
+        filesArray.setAttribute("value", arrayFilesNewNames);
+        files = document.getElementById("addFileButton");
     }
 
     classFile = document.getElementById("addFileButton");
     classFile.addEventListener("change", getFormValues );
+
     console.log(classFile);
-
-
 
 </script>
 

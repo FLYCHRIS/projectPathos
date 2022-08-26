@@ -1,0 +1,83 @@
+{% extends "boilerPlate.html" %}
+
+{% block StyleSheetCSS %}
+    {% load static %}
+
+    <link href="{%static '/searchResults/searchResults.css'%}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+{% load static %}
+    <img class="backgroundImage" src="{%static 'backgroundCube.png' %}" alt="background Image">
+
+    <section id="navBarSection">
+        <div class="navBarContainer">
+            <div class="logo">
+                <img src="{%static 'logoY.png' %}">
+                <div class="logoText"> <h3> PROJECT PATHOS</h3> </div>
+
+            </div>
+            <div class="voidSpaceNav"> </div>
+            <div class="menuOpt">
+                <ul>
+                    <li><a href="{% url 'home:home'%}"> HOME </a></li>
+                    <li><a href="#"> HELP </a></li>
+                    <li ><span class="login"><a href="#"> LOGIN </a></span></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="mainContainerSection">
+        <div class="mainContainerBox">
+            <div class="infoContainer">
+                <div class="closeBar">
+                    <div class="equipTagName"><h2>{{equipName}}|{{title}}</h2></div>
+                    <div class="closeButton"><a href="{% url 'equipmentFinder:equipSearchPage'%}"><p>x</p></a></div>
+                </div>
+
+                <div class="subInfoContainer">
+
+                    <div class="imageContainer">
+
+                       <img class="image" src="../../media/equipImages/{{equipImage}}" alt=" image" >
+
+
+                    </div>
+
+                    <div class="locationOption">
+                        <div class="locationBox">
+                            <div class="coverButton"><a href="#"> <img src="{%static 'locationIconBack.jpg' %}"> </a> </div>
+                            <div class="coverImage"><a href="#"> </a></div>
+                            <div class="locationIconBack"> <a href="#"><img src="{%static 'locationIconBack.jpg' %}"></a></div>
+                            <div class="locationIcon"><img src="{%static 'locationIcon.png' %}"></div>
+                            <div class="locationText"><h2>{{equipLocation}}</h2></div>
+                        </div>
+                    </div>
+
+                    <div class="docOptions">
+                        <h2 class="header">Related Documents</h2>
+                        {% for docNames in equipFiles %}
+                            <div id="uploadDocs">
+                                <img src="{%static 'pdfIcon.png' %}" alt="pdf Icon">
+                                <h2><a href="../../media/equipDocs/{{docNames|safe}}" download="../../media/equipDocs/{{docNames|safe}}">{{docNames}}</a></h2>
+                            </div>
+
+                        {% endfor %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<script type="text/javascript">
+    console.log({{equipFiles|safe}})
+
+</script>
+
+{% endblock %}
